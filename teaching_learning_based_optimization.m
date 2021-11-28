@@ -1,4 +1,4 @@
-function [solution] = teaching_learning_based_optimization(dimension, function_objective, bound_lower, bound_upper, generation, population)
+function [solution] = teaching_learning_based_optimization(dimension, function_objective, bound_lower, bound_upper, generation, population, extra)
 
     % Convergence
     convergence = zeros(generation, 1);
@@ -63,8 +63,9 @@ function [solution] = teaching_learning_based_optimization(dimension, function_o
         % Figure
         figure_convergence(1, convergence(1 : g));
         % figure_plot(2, individuals, bound_lower, bound_upper);
-        figure_contour(3, individuals, bound_lower, bound_upper);
-        figure_mesh(4, individuals, bound_lower, bound_upper);
+        % figure_contour(3, individuals, bound_lower, bound_upper);
+        % figure_mesh(4, individuals, bound_lower, bound_upper);
+        figure_kinematic(5, individuals, extra{1}, extra{2}, extra{3});
 
     end
 
